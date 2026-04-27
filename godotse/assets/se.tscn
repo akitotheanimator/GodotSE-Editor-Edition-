@@ -1,0 +1,247 @@
+[gd_scene format=3 uid="uid://ctual57pqm4xn"]
+
+[ext_resource type="Script" uid="uid://drpq6koniampb" path="res://addons/godotse/se.gd" id="1_ditnu"]
+[ext_resource type="Shader" uid="uid://wxgfmjrn4q6e" path="res://addons/godotse/assets/trippyshader.gdshader" id="2_huunq"]
+[ext_resource type="Script" uid="uid://c27gne77n4vfu" path="res://addons/godotse/merger.gd" id="2_jx1nx"]
+[ext_resource type="Texture2D" uid="uid://c2goys3qv0hs1" path="res://addons/godotse/assets/seanim_dark.png" id="3_8woiq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_778d5"]
+shader = ExtResource("2_huunq")
+
+[sub_resource type="Gradient" id="Gradient_ditnu"]
+offsets = PackedFloat32Array(0, 0.15978)
+colors = PackedColorArray(0, 0.352699, 0.872336, 1, 0.219501, 0.219501, 0.219501, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jx1nx"]
+gradient = SubResource("Gradient_ditnu")
+
+[sub_resource type="Gradient" id="Gradient_jx1nx"]
+colors = PackedColorArray(0.189586, 0.423882, 0.687296, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kt8jp"]
+gradient = SubResource("Gradient_jx1nx")
+
+[node name="SETools" type="Control" unique_id=29408435]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ditnu")
+
+[node name="BACK" type="TextureRect" parent="." unique_id=1349641861]
+material = SubResource("ShaderMaterial_778d5")
+layout_mode = 0
+offset_left = 1803.0
+offset_top = 1.0
+offset_right = 2783.5095
+offset_bottom = 1803.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_jx1nx")
+
+[node name="IISEMO" type="Button" parent="." unique_id=1484664323]
+layout_mode = 1
+offset_left = 34.0
+offset_top = 98.08
+offset_right = 291.0
+offset_bottom = 159.08
+theme_override_constants/outline_size = 20
+action_mode = 0
+text = "Import SEModel"
+
+[node name="IISEAN" type="Button" parent="." unique_id=1490310341]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 161.08
+offset_right = 292.0
+offset_bottom = 222.08
+theme_override_constants/outline_size = 20
+action_mode = 0
+text = "Import SEAnim"
+
+[node name="EESEMO" type="Button" parent="." unique_id=503094293]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 224.08
+offset_right = 292.0
+offset_bottom = 285.08002
+theme_override_constants/outline_size = 20
+action_mode = 0
+text = "Export SEModel"
+
+[node name="EESEANI" type="Button" parent="." unique_id=1826895075]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 287.08002
+offset_right = 292.0
+offset_bottom = 348.08002
+theme_override_constants/outline_size = 20
+action_mode = 0
+text = "Export SEAnims (batch)"
+
+[node name="LTCD" type="Button" parent="." unique_id=1505076963]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 350.08002
+offset_right = 292.0
+offset_bottom = 431.08002
+theme_override_constants/outline_size = 20
+text = "Load textures from a directory to the selected skeleton (batch)"
+text_overrun_behavior = 2
+autowrap_mode = 2
+
+[node name="MMB" type="Button" parent="." unique_id=197917006]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 433.08002
+offset_right = 292.0
+offset_bottom = 494.08002
+theme_override_constants/outline_size = 20
+text = "Merge Bones"
+
+[node name="CR" type="TextureRect" parent="MMB" unique_id=1902733117]
+visible = false
+layout_mode = 0
+offset_left = -44.0
+offset_top = -268.0
+offset_right = 1768.0
+offset_bottom = 2222.0
+texture = SubResource("GradientTexture1D_kt8jp")
+script = ExtResource("2_jx1nx")
+
+[node name="TITLE1" type="Label" parent="MMB/CR" unique_id=1960121693]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 49.0
+offset_right = 66.0
+offset_bottom = 72.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Select Node(s) to merge from"
+
+[node name="TITLE2" type="Label" parent="MMB/CR" unique_id=1658561776]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 134.0
+offset_right = 66.0
+offset_bottom = 157.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Select Node to merge to"
+
+[node name="SEL1" type="Label" parent="MMB/CR" unique_id=1002048635]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 91.0
+offset_right = 66.0
+offset_bottom = 114.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Selected Skeleton(s):"
+
+[node name="SEL2" type="Label" parent="MMB/CR" unique_id=1047943923]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 176.0
+offset_right = 66.0
+offset_bottom = 199.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Selected Skeleton:"
+
+[node name="PROC1" type="Button" parent="MMB/CR" unique_id=1732993014]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 48.0
+offset_right = 467.0
+offset_bottom = 84.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Proceed"
+
+[node name="PROC2" type="Button" parent="MMB/CR" unique_id=405831307]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 132.0
+offset_right = 467.0
+offset_bottom = 168.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Proceed"
+
+[node name="PROC3" type="Button" parent="MMB/CR" unique_id=903559104]
+self_modulate = Color(0.456718, 1, 0.359315, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 222.0
+offset_right = 467.0
+offset_bottom = 258.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Merge bones if the bone name matches"
+
+[node name="PROC4" type="Button" parent="MMB/CR" unique_id=607664810]
+self_modulate = Color(3.27289e-06, 0.732833, 0.97284, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 266.0
+offset_right = 467.0
+offset_bottom = 302.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Merge skeletons root to the target skeleton bone"
+autowrap_mode = 2
+
+[node name="INDE_SEL" type="OptionButton" parent="MMB/CR/PROC4" unique_id=466649036]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 76.0
+offset_right = 443.0
+offset_bottom = 112.0
+theme_override_constants/outline_size = 20
+text_overrun_behavior = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "Select a bone to root merge!"
+popup/item_0/id = 0
+popup/item_0/separator = true
+
+[node name="PROC5" type="Button" parent="MMB/CR" unique_id=1454438802]
+self_modulate = Color(1, 0.324858, 0.422109, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 342.0
+offset_right = 142.0
+offset_bottom = 378.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Return"
+autowrap_mode = 2
+
+[node name="IO" type="FileDialog" parent="." unique_id=1519646002]
+popup_window = true
+use_native_dialog = true
+
+[node name="IO2" type="FileDialog" parent="." unique_id=733256672]
+auto_translate_mode = 1
+title = "Open a Directory"
+popup_window = true
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1265807777]
+position = Vector2(164, 52)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("3_8woiq")
+
+[connection signal="button_down" from="IISEMO" to="." method="IISEMO"]
+[connection signal="button_down" from="IISEAN" to="." method="IISEAN"]
+[connection signal="button_down" from="EESEMO" to="." method="EESEMO"]
+[connection signal="button_down" from="EESEANI" to="." method="EESEANI"]
+[connection signal="button_down" from="LTCD" to="." method="LTCD"]
+[connection signal="button_down" from="MMB" to="." method="activate_merge"]
+[connection signal="button_down" from="MMB/CR/PROC1" to="MMB/CR" method="add_temp_nodes"]
+[connection signal="button_down" from="MMB/CR/PROC2" to="MMB/CR" method="add_targ_node"]
+[connection signal="button_down" from="MMB/CR/PROC3" to="MMB/CR" method="MERGE_BY_NAME"]
+[connection signal="button_down" from="MMB/CR/PROC4" to="MMB/CR" method="MERGE_BY_ROOT"]
+[connection signal="button_down" from="MMB/CR/PROC5" to="." method="disable_merge"]
+[connection signal="dir_selected" from="IO2" to="." method="LTCD_SEL"]
