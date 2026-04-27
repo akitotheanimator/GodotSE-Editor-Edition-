@@ -11,4 +11,5 @@ Download the lastest release, and then unzip the folder on your godot project's 
 
 <img width="1919" height="1130" alt="image" src="https://github.com/user-attachments/assets/add410f3-3703-4c5b-a58b-8df87581bfad" />
 
+
 After that, the SeTools tab should appear on the top-right panel.
