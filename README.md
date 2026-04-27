@@ -1,4 +1,4 @@
-# GodotSE-Editor-Edition-
+# GodotSE (Editor Edition)
 
 A very niche file format that had me installing maya2019 multiple times just to handle them, ported to godot.
 
